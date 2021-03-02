@@ -3,15 +3,55 @@ import { Table } from './component/Table'
 
 const App: React.FC = () => {
 	type Data = {
-		name: string
-		title: string
-		value: number
+		string: string
+		integer: number
+		float: number
+		function: string
+		dom: React.ReactElement
 	}
+	const test = (arg: string): string => {
+		return arg
+	}
+
 	const data: Data[] = [
-		{ name: 'hello', title: 'world', value: 0 },
-		{ name: 'hello', title: 'test', value: 1 },
+		{
+			string: 'hello',
+			integer: 0,
+			float: 1.528,
+			function: test('test1'),
+			dom: <input />,
+		},
+		{
+			string: 'world',
+			integer: 1,
+			float: 2.696,
+			function: test('test2'),
+			dom: (
+				<select>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+				</select>
+			),
+		},
+		{
+			string: 'test',
+			integer: 2,
+			float: 9.111,
+			function: test('test3'),
+			dom: (
+				<div>
+					<span>span</span>
+				</div>
+			),
+		},
 	]
-	return <Table data={data} />
+	return (
+		<Table data={data}>
+			<div>{'child1'}</div>
+			<div>{'child2'}</div>
+		</Table>
+	)
 }
 
 export { App }
