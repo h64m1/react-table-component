@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { Table } from './component/Table'
+import { Table } from './component/Table/Table'
 
 describe('specification', () => {
 	it.todo('テーブルthead行には、props.dataのkeyが表示されること')

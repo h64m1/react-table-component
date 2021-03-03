@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table } from './component/Table'
+import { Table } from './component/Table/Table'
 
 const App: React.FC = () => {
 	type Data = {
