@@ -1,4 +1,5 @@
 import React from 'react'
+import { Column } from './component/Table/Column'
 import { Table } from './component/Table/Table'
 
 const App: React.FC = () => {
@@ -48,8 +49,11 @@ const App: React.FC = () => {
 	]
 	return (
 		<Table data={data}>
-			<div>{'child1'}</div>
-			<div>{'child2'}</div>
+			<Column name='integer' />
+			<Column name='float' />
+			<Column name='string' />
+			<Column name='function' />
+			<Column name='dom' />
 		</Table>
 	)
 }

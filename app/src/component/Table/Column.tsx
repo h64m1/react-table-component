@@ -1,7 +1,13 @@
 import React from 'react'
 
-const Column: React.FC = () => {
-	return <div>{''}</div>
+type ColumnProps = {
+    readonly name: string
+	readonly className?: string
+	children?: React.ReactNode
+}
+
+const Column = (props: ColumnProps) => {
+	return <td className={props.className}>{props.children}</td>
 }
 
 export { Column }

@@ -8,14 +8,14 @@ type TableProps<Data> = {
 const Table = <T extends object>(props: TableProps<T>) => {
 	console.debug('Table | props', props)
 	const data = props.data
-
-	const keys = Object.keys(data[0]) as Array<keyof T>
+	// const keys = Object.keys(data[0]) as Array<keyof T>
 	return (
 		<table>
 			<thead>
 				<tr>
-					{keys.map((key) => {
-						return <th key={key.toString()}>{key}</th>
+					{React.Children.map(props.children, (child, index) => {
+						const childProps = child?.props
+						return <th key={childProps.name}>{childProps.name}</th>
 					})}
 				</tr>
 			</thead>
@@ -23,8 +23,10 @@ const Table = <T extends object>(props: TableProps<T>) => {
 				{data.map((value: T, index: number) => {
 					return (
 						<tr key={index}>
-							{keys.map((key) => {
-								return <td key={key.toString()}>{value[key]}</td>
+							{React.Children.map(props.children, (child, index) => {
+								const childProps = child?.props
+								const key = childProps.name as keyof T
+								return <td key={childProps.name}>{value[key]}</td>
 							})}
 						</tr>
 					)

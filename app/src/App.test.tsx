@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { Table } from './component/Table/Table'
+import { Column } from './component/Table/Column'
 
 describe('specification', () => {
 	it.todo('テーブルthead行には、props.dataのkeyが表示されること')
@@ -46,7 +47,13 @@ describe('specification', () => {
 						),
 					},
 				]}
-			/>,
+			>
+				<Column name="integer" />
+				<Column name="float" />
+				<Column name="string" />
+				<Column name="function" />
+				<Column name="dom" />
+			</Table>,
 		)
 		debug()
 
