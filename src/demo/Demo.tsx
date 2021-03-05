@@ -97,7 +97,7 @@ const DemoTableBorders: React.FC = () => {
 	return (
 		<Table data={data} className="border">
 			{[1, 2, 3, 4].map((e) => (
-				<Column name={`column${e}`} className="border" />
+				<Column key={e} name={`column${e}`} className="border" />
 			))}
 		</Table>
 	)
