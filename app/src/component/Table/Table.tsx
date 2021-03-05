@@ -3,23 +3,21 @@ import React from 'react'
 type TableProps<Data> = {
 	data: Data[]
 	className?: string
-	border?: boolean
 	children?: React.ReactElement | React.ReactElement[]
 }
 
 const Table = <T extends object>(props: TableProps<T>) => {
 	const data = props.data
-	const style = getCommonStyle(props)
-	console.debug('Table | props', props, style)
+	console.debug('Table | props', props)
 
 	return (
-		<table className={props.className} style={style}>
+		<table className={props.className}>
 			<thead>
 				<tr>
 					{React.Children.map(props.children, (child, index) => {
 						const childProps = child?.props
 						return (
-							<th key={childProps.name} className={childProps.className} style={style}>
+							<th key={childProps.name} className={childProps.className}>
 								{childProps.name}
 							</th>
 						)
@@ -34,7 +32,7 @@ const Table = <T extends object>(props: TableProps<T>) => {
 								const childProps = child?.props
 								const key = childProps.name as keyof T
 								return (
-									<td key={childProps.name} className={childProps.className} style={style}>
+									<td key={childProps.name} className={childProps.className}>
 										{value[key]}
 									</td>
 								)
@@ -46,21 +44,6 @@ const Table = <T extends object>(props: TableProps<T>) => {
 			<tfoot></tfoot>
 		</table>
 	)
-}
-
-type commonTableProps = {
-	style?: React.CSSProperties
-	border?: boolean
-}
-
-const getCommonStyle = (props: commonTableProps) => {
-	if (props.border) {
-		return {
-			border: '1px solid',
-		}
-	}
-
-	return {}
 }
 
 export { Table }

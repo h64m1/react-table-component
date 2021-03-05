@@ -1,6 +1,7 @@
 import React from 'react'
 import { Column } from '../component/Table/Column'
 import { Table } from '../component/Table/Table'
+import './demo.css'
 
 const DemoTableNoBorders: React.FC = () => {
 	type Data = {
@@ -94,11 +95,10 @@ const data: Data[] = [
 
 const DemoTableBorders: React.FC = () => {
 	return (
-		<Table data={data} border={true}>
-			<Column name="column1" />
-			<Column name="column2" />
-			<Column name="column3" />
-			<Column name="column4" />
+		<Table data={data} className="border">
+			{[1, 2, 3, 4].map((e) => (
+				<Column name={`column${e}`} className="border" />
+			))}
 		</Table>
 	)
 }
