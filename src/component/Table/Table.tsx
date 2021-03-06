@@ -1,4 +1,5 @@
 import React from 'react'
+import { HeadColumn, BodyColumn } from './Column/Column'
 
 type TableProps<Data> = {
 	data: Data[]
@@ -14,27 +15,27 @@ const Table = <T extends object>(props: TableProps<T>) => {
 		<table className={props.className}>
 			<thead>
 				<tr>
-					{React.Children.map(props.children, (child, index) => {
-						const childProps = child?.props
-						return (
-							<th key={childProps.name} className={childProps.className}>
-								{childProps.name}
-							</th>
-						)
-					})}
+					{React.Children.map(props.children, (child) => (
+						<HeadColumn
+							name={child?.props.name}
+							className={child?.props.className}
+						/>
+					))}
 				</tr>
 			</thead>
 			<tbody>
 				{data.map((value: T, index: number) => {
 					return (
 						<tr key={index}>
-							{React.Children.map(props.children, (child, index) => {
-								const childProps = child?.props
-								const key = childProps.name as keyof T
+							{React.Children.map(props.children, (child) => {
+								const key = child?.props.name as keyof T
 								return (
-									<td key={childProps.name} className={childProps.className}>
+									<BodyColumn
+										name={child?.props.name}
+										className={child?.props.className}
+									>
 										{value[key]}
-									</td>
+									</BodyColumn>
 								)
 							})}
 						</tr>
