@@ -2,27 +2,20 @@
   "name": "@h64m1/react-table-component",
   "version": "0.1.0",
   "private": false,
-  "babel": {
-    "presets": [
-      "@babel/preset-react"
-    ]
-  },
-  "dependencies": {
-    "@types/node": "^12.20.4",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.1",
+  "peerDependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "typescript": "^4.2.2"
+    "react-dom": "^17.0.1"
   },
-  "main": "./dist/index.tsx",
+  "main": "./dist/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "rm -rf dist && mkdir dist &&  babel src/component -d dist --copy-files"
+    "build:app": "tsc",
+    "build:type": "tsc -d"
   },
+  "types": "./types/index.d.ts",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -42,13 +35,17 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.0",
-    "@babel/preset-react": "^7.12.13",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
     "@types/jest": "^26.0.20",
+    "@types/node": "^12.20.4",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
+    "typescript": "^4.2.2",
     "web-vitals": "^1.1.0"
   }
 }
