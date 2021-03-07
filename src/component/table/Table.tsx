@@ -11,7 +11,7 @@ type TableProps<Data> = {
  * Usage:
  *   - use Table component with Column childrens
  *   - Column is used to specify which prop data will be shown
- * <Table data=[{ columnName1: 'name1' },{ columnName2: 'name2' },{ columnName3: 'name3' }]>
+ * <Table data={[{ columnName1: 'name1' },{ columnName2: 'name2' },{ columnName3: 'name3' }]}>
  *   <Column data="columnName1" />
  *   <Column data="columnName2" />
  *   <Column data="columnName3" />
