@@ -1,6 +1,6 @@
 import React from 'react'
-import { Column } from '../component/Table/Column/Column'
-import { Table } from '../component/Table/Table'
+import { Column } from '../component'
+import { Table } from '../component'
 import './demo.css'
 
 const DemoTableNoBorders: React.FC = () => {
