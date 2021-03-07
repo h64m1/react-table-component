@@ -1,2 +1,3 @@
-import { Table } from './component/Table'
-export { Table }
+import { Column } from './component/table/column/Column'
+import { Table } from './component/table/Table'
+export { Table, Column }
