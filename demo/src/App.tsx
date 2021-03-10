@@ -1,5 +1,5 @@
 import React from 'react'
-import { Column, Table } from '@h64m1/react-table-component'
+import { Column, Table } from '../../src'
 
 const App: React.FC = () => {
 	return (

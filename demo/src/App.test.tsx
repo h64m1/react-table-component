@@ -1,6 +1,14 @@
+import React from 'react'
+import { render, screen } from '@testing-library/react'
 
-test('basic', () => {
-    expect(0).toBe(0)
+import App from './App'
+
+describe('render', () => {
+	test('title', () => {
+        render(<App />)
+
+        screen.debug()
+	})
 })
 
 export {}
