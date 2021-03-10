@@ -11,10 +11,11 @@ type TableProps<Data> = {
  * Usage:
  *   - use Table component with Column childrens
  *   - Column is used to specify which prop data will be shown
+ *   - specify 'header' props if one wants to show different string in th instead of the string in data props
  * <Table data={[{ columnName1: 'name1' },{ columnName2: 'name2' },{ columnName3: 'name3' }]}>
  *   <Column data="columnName1" />
  *   <Column data="columnName2" />
- *   <Column data="columnName3" />
+ *   <Column data="columnName3" header="title3" />
  * </Table>
  * @param {TableProps} props props
  * @returns Table component
@@ -37,12 +38,13 @@ const Table = <T extends object>(props: TableProps<T>) => {
 		<table className={props.className}>
 			<thead>
 				<tr>
-					{React.Children.map(props.children, (child) => (
-						<HeadColumn
+					{React.Children.map(props.children, (child) => {
+						return <HeadColumn
 							name={child?.props.name}
+							header={child?.props.header}
 							className={child?.props.className}
 						/>
-					))}
+					})}
 				</tr>
 			</thead>
 			<tbody>

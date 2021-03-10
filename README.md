@@ -11,7 +11,7 @@
 >
 	<Column name="column1" />
 	<Column name="column3" className="text-red" />
-	<Column name="column2" />
+	<Column name="column2" header="title2" />
 </Table>
 ```
 
@@ -30,6 +30,7 @@
 | Name | Type | Description |
 |-|-|-|
 | name | string | specify key of Table `data` element|
+| header? | string | specify header string shown in &lt;th&gt;|
 | className? | string | className for css |
 
 

@@ -15,7 +15,8 @@
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "jsx": "react-jsx",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "noEmit": false
   },
   "include": [
     "src"

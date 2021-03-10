@@ -2,6 +2,7 @@ import React from 'react'
 
 type ColumnProps = {
 	readonly name: string
+	readonly header?: string
 	readonly className?: string
 	children?: React.ReactNode
 }
@@ -30,7 +31,7 @@ const Column = (props: ColumnProps) => (
  */
 const HeadColumn = (props: ColumnProps) => (
 	<th className={props.className}>
-		{props.name}
+		{props.header ?? props.name}
 	</th>
 )
 

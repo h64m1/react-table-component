@@ -103,9 +103,10 @@ const data: Data[] = [
 const DemoTableBorders: React.FC = () => {
 	return (
 		<Table data={data} className="border">
-			{[1, 2, 3, 4].map((e) => (
-				<Column key={e} name={`column${e}`} className="border" />
-			))}
+			{[1, 2, 3, 4].map((e) => {
+				const title = e === 2 ? 'title2' : undefined
+				return <Column key={e} name={`column${e}`} className="border" header={title} />
+			})}
 		</Table>
 	)
 }
