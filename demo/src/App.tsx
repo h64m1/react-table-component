@@ -1,5 +1,6 @@
 import React from 'react'
 import { Column, Table } from '../../src'
+import './App.css'
 
 /**
  * Test empty data props
@@ -37,10 +38,15 @@ const TitleTable: React.FC<{
 	)
 }
 
+/**
+ * Demo App
+ */
 const App: React.FC = () => {
 	return (
 		<>
+			<h2>Table without borders</h2>
 			<DemoTableNoBorders />
+			<h2>Table with borders</h2>
 			<DemoTableBorders />
 		</>
 	)
