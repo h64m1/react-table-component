@@ -9,7 +9,7 @@
 		{ column1: 'test21', column2: 'test22', column3: 'test23' },
 	]}
 >
-	<Column name="column1" />
+	<Column name="column1" style={{ backgroundColor: 'rgb(3,169,244)' }} />
 	<Column name="column3" className="text-red" />
 	<Column name="column2" header="title2" />
 </Table>
@@ -32,6 +32,7 @@
 | name | string | specify key of Table `data` element|
 | header? | string | specify header string shown in &lt;th&gt;|
 | className? | string | className for css |
+| style? | React.CSSProperties | set css properties to body column |
 
 
 ## Licence
