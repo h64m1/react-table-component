@@ -101,8 +101,8 @@ const DemoTableNoBorders: React.FC = () => {
 	return (
 		<Table data={data}>
 			<Column name="integer" />
-			<Column name="float" />
-			<Column name="string" />
+			<Column name="float" style={{ color: 'rgb(146,18,4)'}} />
+			<Column name="string" style={{ backgroundColor: 'rgb(3,169,244)'}} />
 			<Column name="function" />
 			<Column name="dom" />
 		</Table>

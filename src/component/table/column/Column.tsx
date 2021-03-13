@@ -4,6 +4,7 @@ type ColumnProps = {
 	readonly name: string
 	readonly header?: string
 	readonly className?: string
+	readonly style?: React.CSSProperties
 	children?: React.ReactNode
 }
 
@@ -41,7 +42,7 @@ const HeadColumn = (props: ColumnProps) => (
  * @returns column in tbody
  */
 const BodyColumn = (props: ColumnProps) => (
-	<td className={props.className}>{props.children}</td>
+	<td className={props.className} style={props.style}>{props.children}</td>
 )
 
 export { Column, HeadColumn, BodyColumn }

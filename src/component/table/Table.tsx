@@ -12,6 +12,7 @@ type TableProps<Data> = {
  *   - use Table component with Column childrens
  *   - Column is used to specify which prop data will be shown
  *   - specify 'header' props if one wants to show different string in th instead of the string in data props
+ *   - styles can be applied either className or style props, or both
  * <Table data={[{ columnName1: 'name1' },{ columnName2: 'name2' },{ columnName3: 'name3' }]}>
  *   <Column data="columnName1" />
  *   <Column data="columnName2" />
@@ -25,12 +26,12 @@ const Table = <T extends object>(props: TableProps<T>) => {
 	console.debug('Table | props', props)
 
 	if (data === undefined || (data !== undefined && data.length === 0)) {
-		console.debug('Table | data is empty. Do not draw dom\'s')
+		console.debug('Table | data is empty. Do not draw table')
 		return <></>
 	}
 
 	if (props.children === undefined) {
-		console.debug('Table | Column is not defined. Do not draw dom\'s')
+		console.debug('Table | Column is not defined. Do not draw table')
 		return <></>
 	}
 
@@ -39,11 +40,13 @@ const Table = <T extends object>(props: TableProps<T>) => {
 			<thead>
 				<tr>
 					{React.Children.map(props.children, (child) => {
-						return <HeadColumn
-							name={child?.props.name}
-							header={child?.props.header}
-							className={child?.props.className}
-						/>
+						return (
+							<HeadColumn
+								name={child?.props.name}
+								header={child?.props.header}
+								className={child?.props.className}
+							/>
+						)
 					})}
 				</tr>
 			</thead>
@@ -57,6 +60,7 @@ const Table = <T extends object>(props: TableProps<T>) => {
 									<BodyColumn
 										name={child?.props.name}
 										className={child?.props.className}
+										style={child?.props.style}
 									>
 										{value[key]}
 									</BodyColumn>
