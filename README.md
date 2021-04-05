@@ -11,7 +11,7 @@
 >
 	<Column name="column1" style={{ backgroundColor: 'rgb(3,169,244)' }} />
 	<Column name="column3" className="text-red" />
-	<Column name="column2" header="title2" />
+	<Column name="column2" header="title2" id="c2" />
 </Table>
 ```
 
@@ -19,22 +19,22 @@
 
 ### Table
 
-| Name | Type | Description |
-|-|-|-|
-| data | Array | Data to be shown in the Table |
-| className? | string | className for css |
-| children? | React.Element \|\| React.Element[] | Column component |
+| Name       | Type                               | Description                   |
+| ---------- | ---------------------------------- | ----------------------------- |
+| data       | Array                              | Data to be shown in the Table |
+| className? | string                             | className for css             |
+| children?  | React.Element \|\| React.Element[] | Column component              |
 
 ### Column
 
-| Name | Type | Description |
-|-|-|-|
-| name | string | specify key of Table `data` element|
-| header? | string | specify header string shown in &lt;th&gt;|
-| className? | string | className for css |
-| style? | React.CSSProperties | set css properties to body column |
+| Name       | Type                | Description                               |
+| ---------- | ------------------- | ----------------------------------------- |
+| name       | string              | specify key of Table `data` element       |
+| header?    | string              | specify header string shown in &lt;th&gt; |
+| className? | string              | className for css                         |
+| id?        | string              | unique id (th-id for th, td-id for td)    |
+| style?     | React.CSSProperties | set css properties to body column         |
 
-
-## Licence
+## License
 
 MIT
