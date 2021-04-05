@@ -45,6 +45,7 @@ const Table = <T extends object>(props: TableProps<T>) => {
 								name={child?.props.name}
 								header={child?.props.header}
 								className={child?.props.className}
+								id={child?.props.id}
 							/>
 						)
 					})}
@@ -60,6 +61,7 @@ const Table = <T extends object>(props: TableProps<T>) => {
 									<BodyColumn
 										name={child?.props.name}
 										className={child?.props.className}
+										id={child?.props.id}
 										style={child?.props.style}
 									>
 										{value[key]}

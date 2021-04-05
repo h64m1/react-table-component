@@ -3,6 +3,7 @@ import React from 'react'
 type ColumnProps = {
 	readonly name: string
 	readonly header?: string
+	readonly id?: string
 	readonly className?: string
 	readonly style?: React.CSSProperties
 	children?: React.ReactNode
@@ -31,7 +32,7 @@ const Column = (props: ColumnProps) => (
  * @returns column in thead
  */
 const HeadColumn = (props: ColumnProps) => (
-	<th className={props.className}>
+	<th className={props.className} id={getId('th', props.id)}>
 		{props.header ?? props.name}
 	</th>
 )
@@ -42,7 +43,16 @@ const HeadColumn = (props: ColumnProps) => (
  * @returns column in tbody
  */
 const BodyColumn = (props: ColumnProps) => (
-	<td className={props.className} style={props.style}>{props.children}</td>
+	<td className={props.className} id={getId('td', props.id)} style={props.style}>{props.children}</td>
 )
+
+/**
+ * get id
+ * @param {string} name prefix to id
+ * @param {string} id id
+ */
+const getId = (name: string, id?: string) => {
+	return id === undefined ? undefined : `${name}-${id}`
+}
 
 export { Column, HeadColumn, BodyColumn }
