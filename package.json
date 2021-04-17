@@ -1,6 +1,6 @@
 {
   "name": "@h64m1/react-table-component",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "license": "MIT",
   "peerDependencies": {
