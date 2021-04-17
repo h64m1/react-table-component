@@ -23,7 +23,6 @@ type TableProps<Data> = {
  */
 const Table = <T extends object>(props: TableProps<T>) => {
 	const data = props.data
-	console.debug('Table | props', props)
 
 	if (data === undefined || (data !== undefined && data.length === 0)) {
 		console.debug('Table | data is empty. Do not draw table')
